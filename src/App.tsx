@@ -1,26 +1,34 @@
 import { Grid, GridItem, Show } from "@chakra-ui/react";
 import Nav from "./Realcomponents/Nav";
+import {
+  ColorModeButton,
+  DarkMode,
+  LightMode,
+  useColorMode,
+  useColorModeValue,
+} from "@/components/ui/color-mode";
+import ColorModeSwitch from "./Realcomponents/ColorModeSwitch";
 
 function App() {
   return (
-    <Grid
-      templateAreas={{
-        base: `"nav" "main"`,
-        lg: `"nav nav" "aside main"`,
-      }}
-    >
-      <GridItem area="nav">
-        <Nav />
-      </GridItem>
+    <DarkMode>
+      <Grid
+        templateAreas={{
+          base: `"nav" "main"`,
+          lg: `"nav nav" "aside main"`,
+        }}
+      >
+        <GridItem area="nav">
+          <Nav />{" "}
+        </GridItem>
 
-      <GridItem area="aside" bg="gold">
-        Aside
-      </GridItem>
+        <GridItem area="aside" display={{ base: "none", lg: "block" }}>
+          Aside
+        </GridItem>
 
-      <GridItem area="main" bg="dodgerblue">
-        Main
-      </GridItem>
-    </Grid>
+        <GridItem area="main">Main</GridItem>
+      </Grid>
+    </DarkMode>
   );
 }
 
