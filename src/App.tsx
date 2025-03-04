@@ -8,6 +8,7 @@ import {
   useColorModeValue,
 } from "@/components/ui/color-mode";
 import ColorModeSwitch from "./Realcomponents/ColorModeSwitch";
+import GameGrid from "./Realcomponents/GameGrid";
 
 function App() {
   return (
@@ -26,7 +27,9 @@ function App() {
           Aside
         </GridItem>
 
-        <GridItem area="main">Main</GridItem>
+        <GridItem area="main">
+          <GameGrid />
+        </GridItem>
       </Grid>
     </DarkMode>
   );
